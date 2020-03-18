@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cálculo Indice Massa Corporal</title>
+
+    <script type="text/javascript">
+
+    var nome = prompt('Digite o seu nome: ');
+        document.write('Nome: ' + nome + '<br />');
+
+    var altura = prompt('Digite sua altura em cm: ');
+      altura = parseFloat(altura);
+      altura /= 100;
+        document.write('Altura: ' + altura + '<br />');
+
+    var peso = prompt('Digite seu peso: ');
+      peso = parseFloat(peso);
+        document.write('Peso: ' + peso + '<br />');
+
+    //Calculo de indice de massa Corporal
+    // expressão matemática:  M = peso (quilos) ÷ altura²
+    var m = peso/(altura^2);
+    var classificacao = undefined;
+
+    //Bloco do calculo da situação perante a relação alturaxpeso
+    if (m < 16) {
+      classificacao = 'Baixo peso - Muito grave';
+
+    }else if (m >=16 && m <= 16.99) {
+        classificacao = 'Baixo peso - Grave';
+
+    }else if (m >=17 && m <=18.49) {
+        classificacao = 'Baixo peso';
+
+    }else if (m >=18.50 && m <=24.99) {
+        classificacao = 'Peso normal';
+
+    }else if (m >=25 && m <=29.99) {
+      classificacao = 'Sobrepeso';
+
+    }else if (m >=30 && m <=34.99) {
+        classificacao = 'Obesidade grau I';
+
+    }else if (m >=35 && m <=39.99) {
+        classificacao = 'Obesidade grau II';
+
+    }else {
+        classificacao = 'Obesidade grau III';
+    }
+
+    document.write(nome + ' possui  índice  de  massa  corporal  igual  a ' + m + ',  sendo  classificado  como: ' + classificacao);
+
+
+    </script>
+
+  </head>
+  <body>
+
+  </body>
+</html>

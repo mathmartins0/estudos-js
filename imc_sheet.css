@@ -1,0 +1,56 @@
+* {
+    margin: none;
+    font-family: 'helvetica-neue',sans-serif;
+}
+
+body {
+    background: url('./img/back2.jpg') no-repeat    ;
+
+}
+
+.header {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.header h2,
+.header p {
+    font-family: 'Indie Flower', cursive;
+    margin: 0;
+    text-align: center;
+}
+
+.header h2 {
+    font-size: 60px;
+}
+
+.header p {
+    font-size: 25px;
+}
+
+.nome,
+.altura,
+.peso,
+.resultado {
+    width: 450px;
+    margin: 0 auto;
+}
+
+.nome input,
+.altura input,
+.peso input,
+.resultado input{
+    margin-left: 10px;
+    border: none;
+}
+
+.nome label,
+.altura label,
+.peso label,
+.resultado label{
+    font-family: 'Comfortaa', cursive;
+}
+
+.resultado input {
+    text-align: center;
+}

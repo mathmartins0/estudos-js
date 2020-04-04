@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="imc_sheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+    <title>IMC</title>   
+    <script>
+
+        function calculoAltura () {
+            p_altura = document.getElementById('altura').value;
+            p_altura = parseFloat(p_altura);
+            p_altura /= 100;
+
+            altura_f = p_altura;
+
+            return altura_f;
+
+        }
+
+        function calculoPeso () {
+            p_peso = document.getElementById('peso').value;
+            p_peso = parseFloat(p_peso);
+
+            peso_f = p_peso;
+
+            return peso_f;
+        }
+
+        function resultado () {
+            var m = peso_f/(altura_f^2);
+            var classificacao = undefined;
+
+            console.log(m);
+
+            if (m < 16) {
+             classificacao = 'Baixo peso - Muito grave';
+
+                }else if (m >=16 && m <= 16.99) {
+                classificacao = 'Baixo peso - Grave';
+
+                }else if (m >=17 && m <=18.49) {
+                classificacao = 'Baixo peso';
+
+                 }else if (m >=18.50 && m <=24.99) {
+                classificacao = 'Peso normal';
+
+                }else if (m >=25 && m <=29.99) {
+                classificacao = 'Sobrepeso';
+
+                 }else if (m >=30 && m <=34.99) {
+                classificacao = 'Obesidade grau I';
+
+                }else if (m >=35 && m <=39.99) {
+                classificacao = 'Obesidade grau II';
+
+                }else {
+                classificacao = 'Obesidade grau III';
+            }
+
+            document.getElementById('resultado').value = classificacao;
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <div class="header">
+        <h2>Calculo de IMC</h2>
+        <p>Indice de Massa Corporal</p>
+    </div>
+
+    <div class="nome">
+        <label>Digite seu nome:</label>
+        <input type="text">
+    </div>
+<br/>  
+    <div class="altura">
+        <label>Digite sua altura:</label>
+        <input 
+        type="text" 
+        id="altura"
+        onkeyup="calculoAltura()">
+    </div>
+<br/>
+    <div class="peso">
+        <label>Digite seu peso:</label>
+        <input 
+        type="text"
+        id="peso"
+        onkeyup="calculoPeso()">
+    </div>
+<br/>    
+
+    <div class="resultado">
+        <label>Resultado:</label>
+        <input 
+        type="text"
+        id="resultado"
+        onfocus="resultado()">
+    </div>
+</body>
+</html>
